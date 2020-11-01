@@ -2,9 +2,73 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>HtmlPage1</title>
 </head>
 <body>
-
+    <p><h1>Поиск</h1></p>
+    <form>
+        <p><input type="text" placeholder="Введите запрос" name="short_request"></p>
+        <p><input type="submit" value="Выполнить"></p>
+    </form>
+    <form>
+        <p><textarea rows="10" cols="45" placeholder="Введите запрос" name="full_request"></textarea></p>
+        <p>
+            <input type="submit" value="Выполнить">
+            <button type="reset">Очистить форму</button>
+        </p>
+    </form>
+    <form>
+        <p><h1>Выбор страны</h1></p>
+        <p>
+            <input type="checkbox" name="countries" value="russia" /> Russia<br>
+            <input type="checkbox" name="countries" value="usa" /> USA<br>
+            <input type="checkbox" name="countries" value="kanada" /> Kanada<br>
+            <input type="checkbox" name="countries" value="mexico" /> Mexico<br>
+        </p>
+        <p> <input type="submit" value="Выбрать"></p>
+    </form>
+    <form>
+        <p><h1>Выбор языка</h1></p>
+        <p>
+            <input type="radio" name="language" value="russian" /> Russian<br>
+            <input type="radio" name="language" value="american" /> American<br>
+            <input type="radio" name="language" value="canadian" /> Kanadian<br>
+            <input type="radio" name="language" value="mexican" /> Mexican<br>
+        </p>
+        <p> <input type="submit" value="Выбрать"></p>
+    </form>
+    <form>
+        <p><h1>Выбор континета</h1></p>
+        <p>
+            <select size="4">
+                <option disabled>Выберете континент</option>
+                <option name="continent" value="Africa">Africa</option>
+                <option name="continent" value="Europe">Europe</option>
+                <option name="continent" value="Asia">Asia</option>
+                <option name="continent" value="North_America">North America</option>
+                <option name="continent" value="South_America">South America</option>
+                <option name="continent" value="Australia">Australia</option>
+                <option name="continent" value="Antarctica">Antarctica</option>
+            </select>
+        </p>
+        <p> <input type="submit" value="Выбрать"></p>
+    </form>
+    <form>
+        <p><h1>Выбор марки автомобиля</h1></p>
+        <p>
+            <select size="4" multiple name="cars[]">
+                <option disabled>Выберете марку</option>
+                <option name="car" value="Toyota">Toyota</option>
+                <option name="car" value="Subaru">Subaru</option>
+                <option name="car" value="Wolksvagen">Wolksvagen</option>
+                <option name="car" value="Honda">Honda</option>
+                <option name="car" value="Hyundai">Hyundai</option>
+            </select>
+        </p>
+        <p> <input type="submit" value="Выбрать"></p>
+    </form>
+    <a href="Page2.html" shape="circle">Перейти на вторую страницу</a>
+    <form>
+    </form>
 </body>
 </html>
