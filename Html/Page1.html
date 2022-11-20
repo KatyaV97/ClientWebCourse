@@ -5,14 +5,15 @@
 	<title>Page №1</title>
 </head>
 <body>
+	<h1>Онлайн тест</h1>
 	<div>
-		<h2>Онлайн тест</h2>
-	</div>
-	<div>
-		<h4>Сложносочиненное предложение</h4>
+		<h2>Сложносочиненное предложение</h2>
 		<form action="/handler.php" method="post">
-			<span>Укажите сложносочинённое предложение (знаки препинания не расставлены).</span>
-			<p>
+			<div>
+				<span>Укажите сложносочинённое предложение (знаки препинания не расставлены).</span>
+			</div>
+			<br />
+			<div>
 				<label>
 					<input type="radio" value="answer1" name="compoundSentence" />Болотная овсянка пикала и раскачивалась на одной тоненькой тростинке.
 				</label><br />
@@ -25,19 +26,21 @@
 				<label>
 					<input type="radio" value="answer2" name="compoundSentence" />Адъютант был хитёр и не сказал никому о подпоручике Киже и своей удаче.
 				</label>
-				<div>
-					<button type="submit">Отправить ответ</button>
-				</div>
-			</p>
+			</div>
+			<br />
+			<div>
+				<button type="submit">Отправить ответ</button>
+			</div>
 		</form>
 	</div>
 	<div>
-		<h4>Проверка орфографической и пунктуационной грамотности</h4>
+		<h2>Проверка орфографической и пунктуационной грамотности</h2>
 		<form action="/handler.php" method="post">
-			<p>
-				Выполнить задание интерактивного диктанта
-			</p>
-			<p>
+			<div>
+				<span>Выполнить задание интерактивного диктанта.</span>
+			</div>
+			<br />
+			<div>
 				Нынешняя осень была особе
 				<select size="1" name="adverb">
 					<option disabled selected></option>
@@ -56,73 +59,93 @@
 					<option value="e">е</option>
 				</select>
 				рающим противником в упоительной желтизне и оранже.
-				<div>
-					<button type="submit">Отправить ответ</button>
-				</div>
-			</p>
+			</div>
+			<br />
+			<div>
+				<button type="submit">Отправить ответ</button>
+			</div>
 		</form>
 	</div>
 	<div>
-		<h4>Математика решение задач</h4>
+		<h2>Математика решение задач</h2>
 		<form action="/handler.php" method="post">
-			<p>
-				В парк пришло 14 человек.<br />
-				После обеда пришло еще 9 человек<br />
-				А ушло 3.<br />
-				Вечером из парка ушли 6 человек.<br />
-			</p>
-			<span>
-				Сколько человек осталось в парке под вечер?
-			</span>
-			<p>
+			<div>
+				<p>
+					В парк пришло 14 человек.<br />
+					После обеда пришло еще 9 человек<br />
+					А ушло 3.<br />
+					Вечером из парка ушли 6 человек.<br />
+					Сколько человек осталось в парке под вечер?
+				</p>
+			</div>
+			<br />
+			<div>
 				<label>
 					Введите ответ <input type="text" name="answerPeopleCount" />
 				</label>
-				<div>
-					<button type="submit">Отправить ответ</button>
-				</div>
-			</p>
+			</div>
+			<br />
+			<div>
+				<button type="submit">Отправить ответ</button>
+			</div>
 		</form>
 	</div>
 	<div>
-		<h4>Причастные и деепричастные обороты в речи</h4>
+		<h2>Причастные и деепричастные обороты в речи</h2>
 		<form action="/handler.php" method="post">
-			<p>
-				Выпишите из текста причастный оборот.<br />
-				Кто не проклинал станционных смотрителей, кто с ними не бранивался? Кто,
-				в минуту гнева, не требовал от них роковой книги, дабы вписать в оную свою
-				бесполезную жалобу на притеснение, грубость и неисправность? Кто не почитает
-				их извергами человеческого рода, равными покойным подьячим или по крайней мере
-				муромским разбойникам? Будем, однако, справедливы, постараемся войти в их положение
-				и, может быть, станем судить о них гораздо снисходительнее. Что такое станционный
-				смотритель? Сущий мученик четырнадцатого класса, огражденный своим чином токмо от
-				побоев. Входя в бедное его жилище, проезжающий смотрит на него как на врага…
-			</p>
-			<p>
+			<div>
+				<p>
+					Выпишите из текста причастный оборот.<br />
+					Кто не проклинал станционных смотрителей, кто с ними не бранивался? Кто,
+					в минуту гнева, не требовал от них роковой книги, дабы вписать в оную свою
+					бесполезную жалобу на притеснение, грубость и неисправность? Кто не почитает
+					их извергами человеческого рода, равными покойным подьячим или по крайней мере
+					муромским разбойникам? Будем, однако, справедливы, постараемся войти в их положение
+					и, может быть, станем судить о них гораздо снисходительнее. Что такое станционный
+					смотритель? Сущий мученик четырнадцатого класса, огражденный своим чином токмо от
+					побоев. Входя в бедное его жилище, проезжающий смотрит на него как на врага…
+				</p>
+			</div>
+			<br />
+			<div>
 				<textarea name="answerParticipialTurnover" rows="10" cols="20" maxlength="250">Введите ответ</textarea>
-				<div>
-					<button type="submit">Отправить ответ</button>
-				</div>
-			</p>
+			</div>
+			<br />
+			<div>
+				<button type="submit">Отправить ответ</button>
+			</div>
 		</form>
 	</div>
 	<div>
-		<h4>Политическая карта мира</h4>
+		<h2>Политическая карта мира</h2>
 		<form action="/handler.php" method="post">
-			<p>
-				Какие государства входят в десятку стран-гигантов по площади?
-			</p>
-			<p>
-				<input type="checkbox" value="Russia" name="answerBigCountries" />Россия<br />
-				<input type="checkbox" value="Peru" name="answerBigCountries" />Перу<br />
-				<input type="checkbox" value="China" name="answerBigCountries" />Китай<br />
-				<input type="checkbox" value="Australia" name="answerBigCountries" />Австралия<br />
-				<div>
-					<button type="submit">Отправить ответ</button>
-				</div>
-			</p>
+			<div>
+				<span>Какие государства входят в десятку стран-гигантов по площади?</span>
+			</div>
+			<br />
+			<div>
+				<label>
+					<input type="checkbox" value="Russia" name="answerBigCountries" />Россия
+				</label><br />
+				<label>
+					<input type="checkbox" value="Peru" name="answerBigCountries" />Перу
+				</label><br />
+				<label>
+					<input type="checkbox" value="China" name="answerBigCountries" />Китай
+				</label><br />
+				<label>
+					<input type="checkbox" value="Australia" name="answerBigCountries" />Австралия
+				</label><br />
+			</div>
+			<br />
+			<div>
+				<button type="submit">Отправить ответ</button>
+			</div>
 		</form>
 	</div>
-	<div><a href="Page2.html">Посмотреть результат</a></div>
+	<br />
+	<div>
+		<a href="Page2.html">Посмотреть результат</a>
+	</div>
 </body>
 </html>
