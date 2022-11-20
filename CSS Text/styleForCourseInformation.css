@@ -9,8 +9,12 @@
 	width: 100%;
 	max-width: 850px;
 	padding: 5px 0px;
-	/*margin: 12px;
-	font-weight: bold;*/
+}
+
+.title {
+	margin: 0px 12px;
+	color: #676565;
+	font-weight: normal;
 }
 
 .subtitle {
@@ -18,13 +22,7 @@
 	font-weight: bold;
 	color: #4194B6;
 }
-
-.title {
-	margin: 0px 8px;
-	color: #676565;
-	font-weight: normal;
-}
-
+	
 .course-summary {
 	margin: 12px 14px 0px 11px;
 	font-size: 19px;
@@ -46,6 +44,6 @@
 	text-decoration: line-through;
 }
 
-.first {
+.course-description:first-child {
 	margin: 10px 14px 0px 11px;
 }
