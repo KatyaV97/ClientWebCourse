@@ -1,0 +1,72 @@
+﻿* {
+	box-sizing: border-box;
+}
+
+.header {
+	font-size: 32px;
+	font-family: "Gill Sans", sans-serif;
+	font-weight: normal;
+	color: #676565;
+	margin: 2px 16px;
+}
+
+.container {
+	font-family: Helvetica;
+	font-weight: bold;
+	color: #676565;
+	background-color: #feeed6;
+	max-width: 846px;
+	width: 100%;
+	padding: 5px 5px;
+}
+
+.entry-form {
+	margin: 17px 15px;
+}
+
+	.entry-form input, .entry-form textarea {
+		width: 100%;
+		margin: 8px 0px 0px;
+		padding: 10px;
+		border: 0;
+	}
+
+input[type="text"]::-moz-placeholder {
+	color: #B5B5BB;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+	color: #B5B5BB;
+}
+
+textarea::-moz-placeholder {
+	color: #B5B5BB;
+}
+
+textarea::-webkit-input-placeholder {
+	color: #B5B5BB;
+}
+
+.hint {
+	font-size: 15px;
+	color: #959697;
+	margin: 12px 15px;
+}
+
+.btn-send button {
+	background-color: #378DB2;
+	color: #ffffff;
+	font-weight: bold;
+	width: 170px;
+	height: 40px;
+	border: 0;
+}
+
+div.btn-send {
+	text-align: right;
+	margin: 12px 15px;
+}
+
+.comment textarea {
+	height: 130px;
+}

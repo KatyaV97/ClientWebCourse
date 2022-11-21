@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>EntryForm</title>
+	<link href="normalize.css" rel="stylesheet">
+	<link href="StyleForEntryForm.css" rel="stylesheet" />
+</head>
+<body>
+	<h1 class="header">Отправить заявку</h1>
+	<div class="container">
+		<form action="/handler.php" method="post">
+			<div class="entry-form">
+				<label>
+					<span>Ваше имя</span> <br />
+					<input type="text" placeholder="Ваше имя*" name="user-name">
+				</label>
+			</div>
+			<div class="entry-form">
+				<label>
+					<span>Ваш номер телефона</span> <br />
+					<input type="text" placeholder="Ваш номер телефона*" name="user-phone">
+				</label>
+			</div>
+			<div class="entry-form">
+				<label>
+					<span>Ваш email или VK</span> <br />
+					<input type="text" placeholder="Ваш email или VK*" name="user-email-or-VK">
+				</label>
+			</div>
+			<div class="entry-form comment">
+				<label>
+					<span>Комментарий</span> <br />
+					<textarea placeholder="Комментарий (не обязательно)" name="user-comment"></textarea>
+				</label><br />
+			</div>
+			<div class="hint">
+				<span>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</span>
+			</div>
+			<div class="btn-send">
+				<button type="submit">Отправить заявку</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
