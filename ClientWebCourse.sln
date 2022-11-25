@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssTable", "CssTable\CssTab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssForm", "CssForm\CssForm.csproj", "{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gabriel", "Gabriel\Gabriel.csproj", "{63561DA0-F831-4378-8100-443D87266D18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63561DA0-F831-4378-8100-443D87266D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63561DA0-F831-4378-8100-443D87266D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63561DA0-F831-4378-8100-443D87266D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63561DA0-F831-4378-8100-443D87266D18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

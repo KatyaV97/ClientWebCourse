@@ -1,0 +1,161 @@
+﻿* {
+	box-sizing: border-box;
+}
+
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+body {
+	margin: 0px;
+	font-family: "Gill Sans", sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background-color: #A7DAF4;
+}
+
+/* Menu */
+.menu {
+	max-width: 910px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #FFD307;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.nav {
+	font-size: 19px;
+	padding: 12px;
+}
+
+.nav-link {
+	color: #808080;
+	text-decoration: none;
+	transition: color 0.2s linear;
+	text-align: center;
+}
+
+	.nav-link span {
+		font-size: 10px;
+	}
+
+.nav:not(:first-child)::before {
+	content: " ";
+	background: #808080;
+	width: 1px;
+	height: 25px;
+	float: left;
+	margin-right: 10px;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+}
+
+.nav-link:active {
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+/* Requests List */
+.container {
+	width: 100%;
+	max-width: 910px;
+	margin: 0 auto;
+	color: #808080;
+	font-family: helvetica, arial, sans-serif;
+	background-color: #FCFCFC;
+}
+
+.requests-form {
+	width: 100%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.requests-form table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	margin: 0px;
+}
+
+.requests-form th {
+	border-bottom: 1px solid #b9b9b9;
+	font-size: 12px;
+}
+
+.requests-form th, .requests-form td {
+	padding: 5px 5px;
+}
+
+/* Валидатор */
+.body-req-form td:nth-child(1) {
+	font-size: 14px;
+}
+
+/* Адрес */
+.body-req-form td:nth-child(3) {
+	font-size: 9px;
+}
+
+.head-req-form th:nth-child(3), .body-req-form td:nth-child(3) {
+	text-align: left;
+}
+
+/* Остаток ЕТ */
+.body-req-form td:nth-child(4) {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* Сколько необходимо еще ЕТ */
+.body-req-form td:nth-child(5) input {
+	width: 30px;
+	font-size: 9px;
+	padding:2px 2px;
+}
+
+.body-req-form td:nth-child(5)  {
+	text-align:right;
+}
+
+/* Комментарий */
+.head-req-form th:nth-child(6), .body-req-form td:nth-child(6) {
+	text-align: left;
+}
+
+.body-req-form td:nth-child(6) input {
+	width: 100%;
+	font-size: 9px;
+	padding: 2px 8px;
+}
+
+
+/*
+.app-previous {
+	border-collapse: collapse;
+	border: 1px solid grey;
+	width: 100%;
+	text-align: left;
+	font-size: 12px;
+}
+
+	.app-previous thead {
+		background-color: #378db2;
+	}
+
+	.app-previous th, .app-previous td {
+		border: 1px solid grey;
+		padding: 5px 5px;
+	}
+
+.selected {
+	background-color: #d6d6d6
+}
+	*/
