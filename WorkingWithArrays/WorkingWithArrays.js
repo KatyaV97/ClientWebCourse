@@ -1,5 +1,6 @@
 ﻿(function () {
     var AIS = AIS || {};
+
     AIS.currentArray1 = [2, -5, 15, 9, 0, 1];
 
     console.log("Исходный массив: " + AIS.currentArray1.join(", "));
@@ -21,8 +22,8 @@
 
     console.log("Исходный массив: " + AIS.currentArray2.join(", "));
 
-    var squaresEvenNumbers = AIS.currentArray2.filter((a) => a % 2 == 0)
+    AIS.squaresEvenNumbers = AIS.currentArray2.filter((a) => a % 2 == 0)
         .map((a) => a * a);
 
-    console.log("Квадраты четных числе: " + squaresEvenNumbers.join(", "));
+    console.log("Квадраты четных числе: " + AIS.squaresEvenNumbers.join(", "));
 })();

@@ -71,11 +71,11 @@
         }, {});
     }
 
-    var countriesSummaryInfo = getCountriesSummaryInfo(AIS.countries);
+    AIS.countriesSummaryInfo = getCountriesSummaryInfo(AIS.countries);
 
     console.log("Информация по всем странам: ");
 
-    for (var country in countriesSummaryInfo) {
-        console.log(country + ": " + countriesSummaryInfo[country]);
+    for (var country in AIS.countriesSummaryInfo) {
+        console.log(country + ": " + AIS.countriesSummaryInfo[country]);
     }
 })();
