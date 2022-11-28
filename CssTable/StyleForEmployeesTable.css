@@ -4,28 +4,29 @@
 
 .container {
 	max-width: 860px;
-	font-family: helvetica;
+	font-family: Helvetica,Arial,sans-serif;
 	font-size: 22px;
 	color: #232829;
 }
 
 .employees-table {
 	border-collapse: collapse;
-	border: 1px solid grey;
+	border: 1px solid #CCC;
 	width: 100%;
 	text-align: left;
 }
 
-.header {
-	background-color: #3498DB;
-	color: #ffffff;
-}
+	.employees-table thead {
+		background-color: #3498DB;
+		color: #FFF;
+	}
 
-.header th, .employees-info td {
-	border: 1px solid #D5D5D5;
-	padding: 14px 10px 11px;
-}
+	.employees-table th,
+	.employees-table td {
+		border: 1px solid #D5D5D5;
+		padding: 14px 10px 11px;
+	}
 
-.employees-info tr:nth-child(odd) {
-	background-color: #EEEEEE
-}
+	.employees-table tbody tr:nth-child(odd) {
+		background-color: #EEE;
+	}
