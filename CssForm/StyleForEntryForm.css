@@ -4,14 +4,14 @@
 
 .header {
 	font-size: 32px;
-	font-family: "Gill Sans", sans-serif;
+	font-family: Gill Sans,Arial, sans-serif;
 	font-weight: normal;
 	color: #676565;
 	margin: 2px 16px;
 }
 
 .container {
-	font-family: Helvetica;
+	font-family: Helvetica,Arial,sans-serif;
 	font-weight: bold;
 	color: #676565;
 	background-color: #feeed6;
@@ -24,9 +24,10 @@
 	margin: 17px 15px;
 }
 
-	.entry-form input, .entry-form textarea {
+	.entry-form input, 
+	.entry-form textarea {
 		width: 100%;
-		margin: 8px 0px 0px;
+		margin: 8px 0 0;
 		padding: 10px;
 		border: 0;
 	}
@@ -55,7 +56,7 @@ textarea::-webkit-input-placeholder {
 
 .btn-send button {
 	background-color: #378DB2;
-	color: #ffffff;
+	color: #FFF;
 	font-weight: bold;
 	width: 170px;
 	height: 40px;
