@@ -19,13 +19,14 @@ function ready() {
     function getKelvinFromCelsius(celsius) {
         return (+celsius + 273).toFixed(2);
     }
-}
 
-function checkUserValueIsNumber(userValue) {
-    if (userValue === "" || userValue === null || isNaN(userValue)) {
-        alert("Нужно ввести число.");
-        return false;
+    function checkUserValueIsNumber(userValue) {
+        if (userValue === "" || userValue === null || isNaN(userValue)) {
+            alert("Нужно ввести число.");
+            return false;
+        }
+
+        return true;
     }
-
-    return true;
 }
+
