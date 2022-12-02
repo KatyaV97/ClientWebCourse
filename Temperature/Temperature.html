@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Temperature</title>
+	<link href="normalize.css" rel="stylesheet">
+	<link href="StyleForTemperature.css" rel="stylesheet">
+	<script defer src="ConvertTemperature.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="header">Перевод температуры</h1>
+		<div class="temp-convert">
+			<h2 class="header">Температурные шкалы</h2>
+			<p>
+				Обратите внимание, что существует абсолютный ноль - минимальная возможная температура - 0K
+				(-459.67°F, -273.15°C). Ниже этого значения температуры не существует. По крайней мере, в
+				нашей Вселенной.
+			</p>
+			<form class="form-temp-convert">
+				<label>
+					<span>Градус Цельсия (°С)</span>
+					<input type="text" name="temp-celsius" id="user-temp-celsius">
+					<input type="button" class="btn-calc" value="Рассчитать">
+					<button type="reset" for="temp-celsius" class="btn-clear">Очистить</button>
+				</label>
+
+				<label>
+					<span>Градус Фаренгейта (°F)</span>
+					<output name="temp-fahrenheit" id="temp-fahrenheit-result"></output>
+				</label><label>
+					<span>Кельвин (К)</span>
+					<output name="temp-kelvin" id="temp-kelvin-result"></output>
+				</label>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
