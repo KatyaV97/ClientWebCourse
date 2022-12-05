@@ -21,12 +21,12 @@
 	background-color: #feeed6;
 	max-width: 846px;
 	width: 100%;
-	padding: 5px;
 	margin: 0 auto;
+	padding: 5px 22px;
 }
 
 .entry-form {
-	margin: 17px 15px;
+	margin: 17px 0;
 }
 
 	.entry-form input,
@@ -51,7 +51,7 @@ textarea::-webkit-input-placeholder {
 	font-size: 16px;
 	color: #737373;
 	font-weight: normal;
-	margin: 12px 15px;
+	margin: 12px 0;
 }
 
 .btn-send button {
@@ -64,7 +64,7 @@ textarea::-webkit-input-placeholder {
 
 div.btn-send {
 	text-align: right;
-	margin: 12px 15px;
+	margin: 12px 0;
 }
 
 .btn-send button:hover {
