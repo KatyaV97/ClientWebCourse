@@ -23,7 +23,7 @@
 	color: #378db2;
 }
 
-.course-summary {
+.course-summary p {
 	margin: 12px 14px 0 11px;
 	font-size: 19px;
 }
@@ -32,7 +32,7 @@
 	margin-bottom: 14px;
 }
 
-.course-description {
+.course-description p {
 	text-indent: 15px;
 	text-align: justify;
 	margin: 14px 14px 0 11px;
@@ -44,6 +44,6 @@
 	text-decoration: line-through;
 }
 
-.course-description:first-child {
+.course-description p:first-child {
 	margin: 10px 14px 0 11px;
 }
