@@ -84,8 +84,8 @@
         var result = {};
 
         countries.forEach(country => {
-            result[country.name] = country.cities.reduce((sumPopulation, city) => {
-                return sumPopulation + city.population;
+            result[country.name] = country.cities.reduce((populationSum, city) => {
+                return populationSum + city.population;
             }, 0);
         });
 
