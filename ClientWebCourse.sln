@@ -5,13 +5,19 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Html", "Html\Html.csproj", "{EBCAF418-CFB8-4092-AA82-2E1882EDEB72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssText", "CssText\CssText.csproj", "{BE5F3EF2-A7E2-4FFC-A6D9-EC6BF354F55F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CssText", "CssText\CssText.csproj", "{BE5F3EF2-A7E2-4FFC-A6D9-EC6BF354F55F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssTable", "CssTable\CssTable.csproj", "{E93BF73F-1A8F-4C73-A9EC-470A715E63AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CssTable", "CssTable\CssTable.csproj", "{E93BF73F-1A8F-4C73-A9EC-470A715E63AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssForm", "CssForm\CssForm.csproj", "{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CssForm", "CssForm\CssForm.csproj", "{AD712F55-FCE3-49EF-BAAF-DDDAB04DC3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gabriel", "Gabriel\Gabriel.csproj", "{63561DA0-F831-4378-8100-443D87266D18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gabriel", "Gabriel\Gabriel.csproj", "{63561DA0-F831-4378-8100-443D87266D18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithArrays", "WorkingWithArrays\WorkingWithArrays.csproj", "{88068DA1-D785-457F-850A-0E52DCCCC365}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithObjects", "WorkingWithObjects\WorkingWithObjects.csproj", "{5CC9D17A-B0D9-4E3D-B6BE-24D301E5AE07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temperature", "Temperature\Temperature.csproj", "{29BCED5C-A808-4533-B069-5C69B5CEF9D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{63561DA0-F831-4378-8100-443D87266D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63561DA0-F831-4378-8100-443D87266D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63561DA0-F831-4378-8100-443D87266D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88068DA1-D785-457F-850A-0E52DCCCC365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88068DA1-D785-457F-850A-0E52DCCCC365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88068DA1-D785-457F-850A-0E52DCCCC365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88068DA1-D785-457F-850A-0E52DCCCC365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC9D17A-B0D9-4E3D-B6BE-24D301E5AE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC9D17A-B0D9-4E3D-B6BE-24D301E5AE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC9D17A-B0D9-4E3D-B6BE-24D301E5AE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC9D17A-B0D9-4E3D-B6BE-24D301E5AE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BCED5C-A808-4533-B069-5C69B5CEF9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BCED5C-A808-4533-B069-5C69B5CEF9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BCED5C-A808-4533-B069-5C69B5CEF9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BCED5C-A808-4533-B069-5C69B5CEF9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
