@@ -1,14 +1,15 @@
-﻿document.addEventListener("DOMContentLoaded", ready);
+﻿document.addEventListener("DOMContentLoaded", function () {
+    var calcButton = document.querySelector(".btn-calc");
+    var celsiusTemperature = document.getElementById("temperature-celsius");
+    var fahrenheitTemperature = document.getElementById("temperature-fahrenheit-result");
+    var kelvinTemperature = document.getElementById("temperature-kelvin-result");
 
-function ready() {
-    var buttonCalc = document.querySelector(".btn-calc");
+    calcButton.addEventListener("click", function () {
+        var celsius = celsiusTemperature.value;
 
-    buttonCalc.addEventListener("click", function (e) {
-        var celsius = document.getElementById("user-temp-celsius").value;
-
-        if (checkUserValueIsNumber(celsius)) {
-            document.getElementById("temp-fahrenheit-result").value = getFahrenheitFromCelsius(celsius);
-            document.getElementById("temp-kelvin-result").value = getKelvinFromCelsius(celsius);
+        if (checkTemperatureIsNumber(celsius.trim())) {
+            fahrenheitTemperature.value = getFahrenheitFromCelsius(celsius);
+            kelvinTemperature.value = getKelvinFromCelsius(celsius);
         }
     });
 
@@ -20,13 +21,12 @@ function ready() {
         return (+celsius + 273).toFixed(2);
     }
 
-    function checkUserValueIsNumber(userValue) {
-        if (userValue === "" || userValue === null || isNaN(userValue)) {
+    function checkTemperatureIsNumber(temperature) {
+        if (temperature === "" || temperature === null || isNaN(temperature)) {
             alert("Нужно ввести число.");
             return false;
         }
 
         return true;
     }
-}
-
+})
