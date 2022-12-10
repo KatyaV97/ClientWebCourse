@@ -9,8 +9,8 @@
 	box-shadow: 5px -5px 10px #808080;
 	color: #333;
 	font-family: Helvetica, Arial, sans-serif;
-	margin: 15px;
-	border-radius:10px;
+	margin: 15px auto;
+	border-radius: 10px;
 }
 
 .header {
@@ -29,7 +29,7 @@
 		align-items: center;
 	}
 
-	.form-add-tasks input[type="text"] {
+	.form-add-tasks input {
 		padding: 5px 10px;
 		max-width: 75%;
 		width: 75%;
@@ -39,41 +39,88 @@
 	padding: 10px 15px;
 }
 
-.table-tasks-list {
+.tasks-list-table {
 	padding: 10px 15px;
 	border-collapse: collapse;
 	width: 100%;
 	text-align: left;
 	border: 1px solid grey;
 	table-layout: fixed;
+	white-space: pre-line;
+	word-wrap: break-word;
 }
 
-	.table-tasks-list th,
-	.table-tasks-list td {
+	.tasks-list-table th,
+	.tasks-list-table td {
 		padding: 10px 15px;
 		border-bottom: 1px solid #A65B1C;
 	}
 
-	.table-tasks-list th {
+		.tasks-list-table td:last-child {
+			text-align: center;
+		}
+
+	.tasks-list-table th {
 		font-size: 18px;
 		font-weight: bold;
 		background-color: #BF9774;
 	}
 
-	.table-tasks-list tr:hover {
-		background-color: #BF8C60;
+	.tasks-list-table tr:hover {
+		background-color: #BF9774;
 	}
 
-.form-add-tasks input[type="button"] {
+.add-button {
+	width: 20%;
+	min-width: 180px;
 	background-color: #27A630;
 	color: #fff;
 	font-weight: bold;
 	border: 1px solid #004b0a;
 	padding: 10px 30px;
 	border-radius: 8px;
+	margin-left: 10px;
 }
 
-	.form-add-tasks input[type="button"]:hover {
+	.add-button:hover,
+	.edit-button:hover,
+	.save-button:hover {
 		background-color: #004b0a;
 		cursor: pointer;
 	}
+
+.delete-button,
+.cancel-button {
+	width: 40%;
+	min-width: 170px;
+	background-color: #e02020;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #004b0a;
+	padding: 5px 30px;
+	margin: 0 10px;
+}
+
+	.delete-button:hover,
+	.cancel-button:hover {
+		background-color: #890000;
+		cursor: pointer;
+	}
+
+.edit-button,
+.save-button {
+	width: 40%;
+	min-width: 170px;
+	background-color: #27A630;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #004b0a;
+	padding: 5px 20px;
+	margin: 5px 10px;
+}
+
+.edit-task input {
+	width: 100%;
+	height: 100%;
+	padding: 4px 10px;
+}
