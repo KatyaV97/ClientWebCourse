@@ -1,0 +1,79 @@
+﻿* {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 950px;
+	width: 100%;
+	background-color: #FFD7B6;
+	box-shadow: 5px -5px 10px #808080;
+	color: #333;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 15px;
+	border-radius:10px;
+}
+
+.header {
+	padding: 20px 15px 0;
+	font-size: 24px;
+}
+
+.form-add-tasks {
+	padding: 10px 15px;
+}
+
+	.form-add-tasks label {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.form-add-tasks input[type="text"] {
+		padding: 5px 10px;
+		max-width: 75%;
+		width: 75%;
+	}
+
+.tasks-list {
+	padding: 10px 15px;
+}
+
+.table-tasks-list {
+	padding: 10px 15px;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+	border: 1px solid grey;
+	table-layout: fixed;
+}
+
+	.table-tasks-list th,
+	.table-tasks-list td {
+		padding: 10px 15px;
+		border-bottom: 1px solid #A65B1C;
+	}
+
+	.table-tasks-list th {
+		font-size: 18px;
+		font-weight: bold;
+		background-color: #BF9774;
+	}
+
+	.table-tasks-list tr:hover {
+		background-color: #BF8C60;
+	}
+
+.form-add-tasks input[type="button"] {
+	background-color: #27A630;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #004b0a;
+	padding: 10px 30px;
+	border-radius: 8px;
+}
+
+	.form-add-tasks input[type="button"]:hover {
+		background-color: #004b0a;
+		cursor: pointer;
+	}
