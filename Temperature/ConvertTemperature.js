@@ -1,5 +1,5 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    var calcButton = document.querySelector(".btn-calc");
+    var calcButton = document.querySelector(".calc-button");
     var celsiusTemperature = document.getElementById("temperature-celsius");
     var fahrenheitTemperature = document.getElementById("temperature-fahrenheit-result");
     var kelvinTemperature = document.getElementById("temperature-kelvin-result");

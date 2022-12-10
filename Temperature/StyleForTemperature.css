@@ -76,30 +76,30 @@
 		color: #000;
 	}
 
-.btn-calc {
+.calc-button {
 	background-color: #2a9c39;
 	border: 1px solid #11751e;
 }
 
-.btn-clear {
+.clear-button {
 	background-color: #909090;
 	border: 1px solid #373737;
 }
 
-.btn-calc:hover {
+.calc-button:hover {
 	background-color: #11751e;
 	cursor: pointer;
 }
 
-.btn-clear:hover {
+.clear-button:hover {
 	background-color: #555;
 	cursor: pointer;
 }
 
-.btn-calc:active {
+.calc-button:active {
 	box-shadow: 2px 2px 4px #02440b inset;
 }
 
-.btn-clear:active {
+.clear-button:active {
 	box-shadow: 2px 2px 4px #0d0d0d inset;
 }
