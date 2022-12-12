@@ -21,7 +21,7 @@
     });
 
     //Добавление задачи при нажатии на Enter
-    document.querySelector("input").addEventListener("keydown", function (e) {
+    document.querySelector(".new-task").addEventListener("keydown", function (e) {
         if (e.keyCode == 13) {
             addTaskHandler();
         }
@@ -89,11 +89,12 @@
         taskRow.querySelector(".edit-task input").value = task;
 
         taskRow.querySelector(".save-button").addEventListener("click", function () {
-            var editTask = taskRow.querySelector(".edit-task input").value;
+            updateTask(taskRow);
+        });
 
-            if (checkTaskIsValid(editTask.trim())) {
-                addTask(editTask, taskRow);
-                localStorage[taskRow.getAttribute("token")] = editTask;
+        document.querySelector(".edit-task input").addEventListener("keydown", function (e) {
+            if (e.keyCode == 13) {
+                updateTask(taskRow);
             }
         });
 
@@ -102,16 +103,25 @@
         });
     }
 
+    function updateTask(taskRow) {
+        var editTask = taskRow.querySelector(".edit-task input").value;
+
+        if (checkTaskIsValid(editTask.trim())) {
+            addTask(editTask, taskRow);
+            localStorage[taskRow.getAttribute("token")] = editTask;
+        }
+    }
+
     function initTasks() {
         tokens.forEach(token => {
-            var newTaskRow = document.createElement("tr");
+            var taskRow = document.createElement("tr");
             var task = localStorage.getItem(token);
 
-            newTaskRow.setAttribute("token", token);
+            taskRow.setAttribute("token", token);
 
-            addTask(task, newTaskRow);
+            addTask(task, taskRow);
 
-            bodyTable.appendChild(newTaskRow);
+            bodyTable.appendChild(taskRow);
         })
     }
 
