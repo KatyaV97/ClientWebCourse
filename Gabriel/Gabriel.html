@@ -3,169 +3,192 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Gabriel</title>
-	<link href="normalize.css" rel="stylesheet" />
-	<link href="StyleForGabriel.css" rel="stylesheet" />
+	<link href="normalize.css" rel="stylesheet">
+	<link href="StyleForGabriel.css" rel="stylesheet">
+	<link href="https://fonts.fontstorage.com/import/roboto.css" rel="styleheets">
 </head>
 <body>
-	<div class="menu">
-		<div class="nav">
-			<a class="nav-link" href="">Gabriel</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Gabriel <span>блоки</span></a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Сирена</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Amadeus</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Sabre</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Galileo</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Galileo</a>
-		</div><div class="nav">
-			<a class="nav-link" href="">Бумажные</a>
+	<div class="main-form">
+		<div class="menu">
+			<div class="nav">
+				<a class="nav-link" href="">Gabriel</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Gabriel <span>блоки</span></a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Сирена</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Amadeus</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Sabre</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Galileo</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Galileo</a>
+			</div><div class="nav">
+				<a class="nav-link" href="">Бумажные</a>
+			</div>
+		</div>
+
+		<div class="container">
+			<form action="/handler.php" method="post" class="requests-form">
+				<table>
+					<thead class="head-req-form">
+						<tr>
+							<th>Валидатор</th>
+							<th>Буква</th>
+							<th>Адрес</th>
+							<th>Остаток ЕТ</th>
+							<th>Сколько необходимо еще ЕТ</th>
+							<th>Комментарий</th>
+						</tr>
+					</thead>
+					<tbody class="body-req-form">
+						<tr>
+							<td>421-7176-1</td>
+							<td>А</td>
+							<td>РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+							<td>10</td>
+							<td>
+								<input type="text" placeholder="200" name="required-ET-1">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-comment-1">
+							</td>
+						</tr>
+						<tr>
+							<td>421-7736-1</td>
+							<td>А</td>
+							<td>Moldova, Chisinau, str. Alexandry cel Bun, 98</td>
+							<td>35</td>
+							<td>
+								<input type="text" placeholder="100" name="required-E-2">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-commen-2">
+							</td>
+						</tr>
+						<tr>
+							<td>421-3476-1</td>
+							<td></td>
+							<td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
+							<td>50</td>
+							<td>
+								<input type="text" placeholder="20" name="required-E-3">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-commen-3">
+							</td>
+						</tr>
+						<tr>
+							<td>421-7176-1</td>
+							<td>А</td>
+							<td>РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+							<td>70</td>
+							<td>
+								<input type="text" placeholder="200" name="required-E-4">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
+							</td>
+						</tr>
+						<tr>
+							<td>421-7736-1</td>
+							<td>А</td>
+							<td>Moldova, Chisinau, str. Alexandry cel Bun, 98</td>
+							<td>75</td>
+							<td>
+								<input type="text" placeholder="1000" name="required-E-4">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
+							</td>
+						</tr>
+						<tr>
+							<td>421-3476-1</td>
+							<td>А</td>
+							<td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
+							<td>100</td>
+							<td>
+								<input type="text" placeholder="20" name="required-E-4">
+							</td>
+							<td>
+								<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btns-form">
+					<div class="btn-archive">
+						<button type="button">Архив заявок</button>
+					</div>
+					<div>
+						<button class="btn-reset" type="reset">Отменить</button>
+						<button class="btn-send" type="submit">Отправить</button>
+					</div>
+				</div>
+			</form>
+			<div class="header-app-prev">
+				<div>Предыдущие заявки</div>
+				<div>
+					<span>
+						Обновлено 13.11.2012, 15:45
+					</span>
+					<object type="image/png" data="icons/refresh.png" class="update-btn"></object>
+				</div>
+			</div>
+			<div class="app-previous">
+				<table class="table-app-previous">
+					<thead>
+						<tr>
+							<th>Дата, время заявки</th>
+							<th>Номер заявки</th>
+							<th>Статус</th>
+							<th>Система бронирования</th>
+							<th>Заказано</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="selected">
+							<td>21.12.2012, 08:04</td>
+							<td>32512192E75B</td>
+							<td>На рассмотрении</td>
+							<td>Gabriel</td>
+							<td>400</td>
+							<td>
+								<object type="image/png" data="icons/delete.png" class="btn-delete"></object>
+							</td>
+						</tr>
+						<tr class="selected">
+							<td>18.12.2012, 10:04</td>
+							<td>32512122E75B</td>
+							<td>На рассмотрении</td>
+							<td>Amadeus</td>
+							<td>350</td>
+							<td>
+								<object type="image/png" data="icons/delete.png" class="btn-delete"></object>
+							</td>
+						</tr>
+						<tr>
+							<td>13.12.2012, 08:23</td>
+							<td>32522192E75B</td>
+							<td>Рассмотрена</td>
+							<td>Gabriel</td>
+							<td>200</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>13.12.2012, 08:23</td>
+							<td>32522192E75B</td>
+							<td>Рассмотрена</td>
+							<td>Gabriel</td>
+							<td>200</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-	
-	<div class="container">
-
-		<form action="/handler.php" method="post" class="requests-form">
-			<table>
-				<thead class="head-req-form">
-					<tr>
-						<th>Валидатор</th>
-						<th>Буква</th>
-						<th>Адрес</th>
-						<th>Остаток ЕТ</th>
-						<th>Сколько необходимо еще ЕТ</th>
-						<th>Комментарий</th>
-					</tr>
-				</thead>
-				<tbody class="body-req-form">
-					<tr >
-						<td>421-7176-1</td>
-						<td>А</td>
-						<td>РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
-						<td>10</td>
-						<td>
-							<input type="text" placeholder="200" name="required-ET-1">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-comment-1">
-						</td>
-					</tr>
-					<tr >
-						<td>421-7736-1</td>
-						<td>А</td>
-						<td>Moldova, Chisinau, str. Alexandry cel Bun, 98</td>
-						<td>35</td>
-						<td>
-							<input type="text" placeholder="100" name="required-E-2">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-commen-2">
-						</td>
-					</tr>
-					<tr>
-						<td>421-3476-1</td>
-						<td></td>
-						<td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
-						<td>50</td>
-						<td>
-							<input type="text" placeholder="20" name="required-E-3">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-commen-3">
-						</td>
-					</tr>
-					<tr>
-						<td>421-7176-1</td>
-						<td>А</td>
-						<td>РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
-						<td>70</td>
-						<td>
-							<input type="text" placeholder="200" name="required-E-4">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
-						</td>
-					</tr>
-					<tr>
-						<td>421-7736-1</td>
-						<td>А</td>
-						<td>Moldova, Chisinau, str. Alexandry cel Bun, 98</td>
-						<td>75</td>
-						<td>
-							<input type="text" placeholder="1000" name="required-E-4">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
-						</td>
-					</tr>
-					<tr>
-						<td>421-3476-1</td>
-						<td>А</td>
-						<td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
-						<td>1000</td>
-						<td>
-							<input type="text" placeholder="20" name="required-E-4">
-						</td>
-						<td>
-							<input type="text" placeholder="Какой-то комментарий" name="user-commen-4">
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="btn-send">
-				<button type="button">Архив заявок</button>
-				<button type="reset">Отменить</button>
-				<button type="submit">Отправить</button>
-			</div>
-		</form>
-		<h1>Предыдущие заявки <span>Обновлено 13.11.2012, 15:45</span></h1>
-		<table class="app-previous">
-			<thead>
-				<tr>
-					<th>Дата, время заявки</th>
-					<th>Номер заявки</th>
-					<th>Статус</th>
-					<th>Система бронирования</th>
-					<th>Заказано</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="selected">
-					<td>21.12.2012, 08:04</td>
-					<td>32512192E75B</td>
-					<td>На рассмотрении</td>
-					<td>Gabriel</td>
-					<td>400</td>
-				</tr>
-				<tr class="selected">
-					<td>18.12.2012, 10:04</td>
-					<td>32512122E75B</td>
-					<td>На рассмотрении</td>
-					<td>Amadeus</td>
-					<td>350</td>
-				</tr>
-				<tr>
-					<td>13.12.2012, 08:23</td>
-					<td>32522192E75B</td>
-					<td>Рассмотрена</td>
-					<td>Gabriel</td>
-					<td>200</td>
-				</tr>
-				<tr>
-					<td>13.12.2012, 08:23</td>
-					<td>32522192E75B</td>
-					<td>Рассмотрена</td>
-					<td>Gabriel</td>
-					<td>200</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-	
 </body>
 </html>
