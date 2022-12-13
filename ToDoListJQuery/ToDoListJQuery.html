@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ToDo List JQuery</title>
+    <link href="normalize.css" rel="stylesheet">
+    <link href="StyleForToDoListJQuery.css" rel="stylesheet">
+    <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script defer src="ToDoListJQuery.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="header">Список задач</h1>
+    <form name="form-add-tasks" class="form-add-tasks">
+        <label>
+            <input type="text" class="new-task">
+            <button type="button" class="add-button">Добавить</button>
+        </label>
+    </form>
+    <div class="tasks-list">
+        <table class="tasks-list-table">
+            <thead>
+            <tr>
+                <th>Задачи</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

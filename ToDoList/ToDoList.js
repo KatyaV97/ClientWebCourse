@@ -2,10 +2,11 @@
     var addButton = document.querySelector(".add-button");
     var newTaskInputText = document.querySelector(".new-task");
     var bodyTable = document.querySelector(".tasks-list-table tbody");
+
     var storageTokens = localStorage.getItem("tokens");
     var tokens = [];
 
-    if (storageTokens !== null && storageTokens != "") {
+    if (storageTokens !== null && storageTokens !== "") {
         tokens = storageTokens.split(", ");
         initTasks();
     }
