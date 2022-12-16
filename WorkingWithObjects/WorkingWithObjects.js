@@ -57,34 +57,37 @@
         }
     ];
 
-    console.log("Исходный массив: " + modifyCountriesInfoToString(countries));
-
-    var countriesWithMaxCitiesCount = getCountriesWithMaxCitiesCount(countries);
-    console.log("Страны/страна с максимальным количеством городов: " +
-        modifyCountriesInfoToString(countriesWithMaxCitiesCount));
-
-    var countriesSummaryInfo = getCountriesSummaryInfo(countries);
-    console.log("Информация по всем странам: ");
-
-    for (var country in countriesSummaryInfo) {
-        console.log(country + ": " + countriesSummaryInfo[country]);
+    function getCountriesInfoString(countries) {
+        return countries.map(function (country) {
+            return (country.name + ": " + country.cities.map(function (city) {
+                return "\n " + city.name + ": " + city.population;
+            })
+            );
+        }
+        ).join(", ");
     }
 
+    console.log("Исходный массив:\n" + getCountriesInfoString(countries));
+
     function getCountriesWithMaxCitiesCount(countries) {
-        var maxCitiesCount = Math.max.apply(Math, countries.map(country => {
+        var maxCitiesCount = Math.max.apply(null, countries.map(function (country) {
             return country.cities.length;
         }));
 
-        return countries.filter(country => {
-            return country.cities.length == maxCitiesCount;
+        return countries.filter(function (country) {
+            return country.cities.length === maxCitiesCount;
         });
     }
+
+    var countriesWithMaxCitiesCount = getCountriesWithMaxCitiesCount(countries);
+    console.log("Страны/страна с максимальным количеством городов:\n" +
+        getCountriesInfoString(countriesWithMaxCitiesCount));
 
     function getCountriesSummaryInfo(countries) {
         var result = {};
 
-        countries.forEach(country => {
-            result[country.name] = country.cities.reduce((populationSum, city) => {
+        countries.forEach(function (country) {
+            result[country.name] = country.cities.reduce(function (populationSum, city) {
                 return populationSum + city.population;
             }, 0);
         });
@@ -92,14 +95,10 @@
         return result;
     }
 
-    function modifyCountriesInfoToString(countries) {
-        return countries.map(country => {
-            return ("\n " +
-                country.name + ": " + country.cities.map(city => {
-                    return "\n " + city.name + ": " + city.population;
-                })
-            );
-        }
-        ).join(", ");
+    var countriesSummaryInfo = getCountriesSummaryInfo(countries);
+    console.log("Информация по всем странам:");
+
+    for (var country in countriesSummaryInfo) {
+        console.log(country + ": " + countriesSummaryInfo[country]);
     }
 })();
