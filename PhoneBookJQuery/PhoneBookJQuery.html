@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charsert="utf-8" />
+	<title>Phone Book JQuery</title>
+	<link href="normalize.css" rel="stylesheet">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="StyleForPhoneBook.css" rel="stylesheet">
+	<script defer src="jquery-3.6.2.js"></script>
+	<script defer src="popper.js"></script>
+	<script defer src="bootstrap.min.js"></script>
+	<script defer src="bootbox.all.min.js">
+	</script>
+	<script defer src="PhoneBookJQuery.js"></script>
+</head>
+<body>
+	<div class="add-form">
+		<h1>Create contact</h1>
+		<form>
+			<div>
+				<label>
+					Last Name:*<br />
+					<input id="last-name" type="text" placeholder="Enter last name">
+					<span class="failed-validation js-hidden-hint" id="last-name-invalid">The field is required</span>
+				</label>
+			</div><div>
+				<label>
+					First Name:*<br />
+					<input id="first-name" type="text" placeholder="Enter first name">
+					<span class="failed-validation js-hidden-hint" id="first-name-invalid">The field is required</span>
+				</label>
+			</div><div>
+				<label>
+					Phone:*<br />
+					<input id="phone-number" type="text" placeholder="Enter phone number">
+					<span class="failed-validation js-hidden-hint" id="phone-number-invalid">The field is required</span>
+				</label>
+			</div>
+			<div>
+				<button type="button" class="add-button">+ Add contact</button>
+			</div>
+		</form>
+	</div>
+	<div class="contacts-list">
+		<h1>Contacts</h1>
+		<div>
+			<form>
+				<input type="text" class="filter-text" placeholder="Search">
+				<button type="button" class="apply-filter-button">Apply</button>
+				<button type="button" class="clear-filter-button">Clear</button>
+			</form>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th><input type="checkbox" id="common-checkbox"></th>
+					<th>№</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Phone Number</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</body>
