@@ -1,58 +1,58 @@
 ﻿(function () {
-    var arrayNumbers1 = [2, -5, 15, 9, 0, 1, 6];
+    var numbersArray1 = [2, -5, 15, 9, 0, 1, 6];
 
-    console.log("Исходный массив: " + arrayNumbers1.join(", "));
+    console.log("Исходный массив: " + numbersArray1.join(", "));
 
-    getSortedArray(arrayNumbers1);
-    console.log("Отсортированный массив: " + arrayNumbers1.join(", "));
-
-    fiveFirstElementsArrayNumbers1 = getFiveFirstElements(arrayNumbers1);
-    console.log("Массив из первых пяти элементов: " + fiveFirstElementsArrayNumbers1.join(", "));
-
-    fiveLastElementsArrayNumbers1 = getFiveLastElements(arrayNumbers1);
-    console.log("Массив из последних пяти элементов: " + fiveLastElementsArrayNumbers1.join(", "));
-
-    evenNumbersSumArrayNumbers1 = getEvenNumbersSum(arrayNumbers1);
-    console.log("Сумма четных элементов массива: " + evenNumbersSumArrayNumbers1);
-
-    var arrayNumbers2 = [];
-
-    for (var i = 1; i <= 100; i++) {
-        arrayNumbers2.push(i);
-    }
-
-    console.log("Исходный массив: " + arrayNumbers2.join(", "));
-
-    evenNumberSquares = getEvenNumbersSquares(arrayNumbers2);
-    console.log("Квадраты четных числе: " + evenNumberSquares.join(", "));
-
-    function getSortedArray(array) {
+    function sortArray(array) {
         array.sort(function (e1, e2) {
-            return e1 - e2;
+            return e2 - e1;
         });
     }
 
-    function getFiveFirstElements(array) {
+    sortArray(numbersArray1);
+    console.log("Отсортированный массив: " + numbersArray1.join(", "));
+
+    function get5firstElements(array) {
         return array.slice(0, 5);
     }
 
-    function getFiveLastElements(array) {
+    var fiveFirstElements = get5firstElements(numbersArray1);
+    console.log("Массив из первых пяти элементов: " + fiveFirstElements.join(", "));
+
+    function get5lastElements(array) {
         return array.slice(-5);
     }
 
+    var fiveLastElements = get5lastElements(numbersArray1);
+    console.log("Массив из последних пяти элементов: " + fiveLastElements.join(", "));
+
     function getEvenNumbersSum(array) {
         return array.filter(function (e) {
-            return e % 2 == 0;
+            return e % 2 === 0;
         }).reduce(function (sum, e) {
             return sum + e;
         }, 0);
     }
 
+    var evenNumbersSum = getEvenNumbersSum(numbersArray1);
+    console.log("Сумма четных элементов массива: " + evenNumbersSum);
+
+    var numbersArray2 = [];
+
+    for (var i = 1; i <= 100; i++) {
+        numbersArray2.push(i);
+    }
+
+    console.log("Исходный массив: " + numbersArray2.join(", "));
+
     function getEvenNumbersSquares(array) {
         return array.filter(function (e) {
-            return e % 2 == 0;
-        }).map(function (e1) {
-            return Math.pow(e1, 2);
+            return e % 2 === 0;
+        }).map(function (e) {
+            return e * e;
         });
     }
+
+    var evenNumberSquares = getEvenNumbersSquares(numbersArray2);
+    console.log("Квадраты четных числе: " + evenNumberSquares.join(", "));
 })();
