@@ -1,17 +1,17 @@
 ﻿$(function () {
     var addButton = $(".add-button");
     var newTaskInputText = $(".new-task");
-    var bodyTable = $(".tasks-list-table tbody");
+    var tableBody = $(".tasks-list-table tbody");
 
-    var storageTokens = localStorage.getItem("tokens");
-    var tokens = [];
+    var tasks = [];
+    var storageTasks = localStorage.getItem("tasks");
 
-    if (storageTokens !== null && storageTokens !== "") {
-        tokens = storageTokens.split(", ");
+    if (storageTasks !== null && storageTasks !== "") {
+        tasks = JSON.parse(storageTasks);
         initTasks();
     }
 
-    $("form").on("keydown", function (e) {
+    $(".form-add-tasks").on("keydown", function (e) {
         if (e.keyCode === 13) {
             e.preventDefault();
         }
@@ -19,15 +19,15 @@
 
     $(".new-task").on("keydown", function (e) {
         if (e.keyCode === 13) {
-            addTaskHandler();
+            addTask();
         }
     });
 
     addButton.click(function () {
-        addTaskHandler();
+        addTask();
     });
 
-    function addTaskHandler() {
+    function addTask() {
         var newTask = newTaskInputText.val().trim();
         newTaskInputText.val("");
 
@@ -36,15 +36,16 @@
             return;
         }
 
-        var newToken = randomToken();
+        var newTaskRow = $("<tr>").appendTo(tableBody);
 
-        var newTaskRow = $("<tr>").appendTo(bodyTable).attr("token", newToken);
+        insertTaskInRow(newTask, newTaskRow);
 
-        addTask(newTask, newTaskRow);
+        tasks.push({
+            rowIndex: newTaskRow.index(),
+            task: newTask,
+        });
 
-        localStorage.setItem(newToken, newTask);
-        tokens.push(newToken);
-        localStorage.tokens = tokens.join(", ");
+        localStorage.tasks = JSON.stringify(tasks);
     }
 
     function isValidTask(task) {
@@ -55,51 +56,46 @@
         return true;
     }
 
-    function addTask(task, taskRow) {
+    function insertTaskInRow(task, taskRow) {
         taskRow.html("<td class='new-task'></td>" +
             "<td><button type='button' class='edit-button'>Редактировать</button>" +
-            "<button type = 'button' class='delete-button'>Удалить</button ></td> ")
+            "<button type='button' class='delete-button'>Удалить</button ></td> ")
             .find(".new-task")
             .text(task);
 
         taskRow.find(".edit-button").click(function () {
-            var editableTask = $(this).closest("tr").find(".new-task").text();
-            var editableRow = $(this).closest("tr");
+            var task = taskRow.find(".new-task").text();
 
-            editTask(editableTask, editableRow);
+            editTask(task, taskRow);
         });
 
         taskRow.find(".delete-button").click(function () {
-            $(this).closest("tr").remove();
+            tasks.splice(taskRow.index(), 1);
+            localStorage.tasks = JSON.stringify(tasks);
 
-            var token = taskRow.attr("token")
-            delete localStorage[token];
-
-            var index = tokens.indexOf(token);
-            tokens.splice(index, 1);
-            localStorage.tokens = tokens.join(", ");
+            taskRow.remove();
         });
     }
 
     function editTask(task, taskRow) {
-        taskRow.html("<td class='edit-task'><input type='text>'></td>" +
+        taskRow.html("<td class='edit-task'><input type='text'></td>" +
             "<td><button type='button' class='save-button'>Сохранить</button>" +
-            "<button type = 'button' class='cancel-button'>Отмена</button ></td> ")
+            "<button type='button' class='cancel-button'>Отмена</button ></td> ")
             .find(".edit-task input")
             .val(task);
 
         taskRow.find(".save-button").click(function () {
-            updateTask($(this).closest("tr"));
+            updateTask(taskRow);
         });
 
         taskRow.find(".edit-task input").on("keydown", function (e) {
             if (e.keyCode === 13) {
-                updateTask($(this).closest("tr"));
+                updateTask(taskRow);
             }
         });
 
         taskRow.find(".cancel-button").on("click", function () {
-            addTask(task, $(this).closest("tr"));
+            insertTaskInRow(task, taskRow);
         });
     }
 
@@ -111,21 +107,18 @@
             return;
         }
 
-        addTask(editTask, taskRow);
-        localStorage[taskRow.attr("token")] = editTask;
+        insertTaskInRow(editTask, taskRow);
+
+        tasks[taskRow.index()].task = editTask;
+        localStorage.tasks = JSON.stringify(tasks);
     }
 
     function initTasks() {
-        tokens.forEach(token => {
-            var taskRow = $("<tr>").attr("token", token).appendTo(bodyTable);
+        tasks.forEach(taskInfo => {
+            var taskRow = $("<tr>").appendTo(tableBody);
+            var task = taskInfo.task;
 
-            var task = localStorage.getItem(token);
-
-            addTask(task, taskRow);
-        })
-    }
-
-    function randomToken() {
-        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            insertTaskInRow(task, taskRow);
+        });
     }
 });
