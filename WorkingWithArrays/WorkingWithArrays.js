@@ -3,27 +3,27 @@
 
     console.log("Исходный массив: " + numbersArray1.join(", "));
 
-    function sortArray(array) {
+    function sortArrayByDesc(array) {
         array.sort(function (e1, e2) {
             return e2 - e1;
         });
     }
 
-    sortArray(numbersArray1);
+    sortArrayByDesc(numbersArray1);
     console.log("Отсортированный массив: " + numbersArray1.join(", "));
 
-    function get5firstElements(array) {
+    function get5FirstElements(array) {
         return array.slice(0, 5);
     }
 
-    var fiveFirstElements = get5firstElements(numbersArray1);
+    var fiveFirstElements = get5FirstElements(numbersArray1);
     console.log("Массив из первых пяти элементов: " + fiveFirstElements.join(", "));
 
-    function get5lastElements(array) {
+    function get5LastElements(array) {
         return array.slice(-5);
     }
 
-    var fiveLastElements = get5lastElements(numbersArray1);
+    var fiveLastElements = get5LastElements(numbersArray1);
     console.log("Массив из последних пяти элементов: " + fiveLastElements.join(", "));
 
     function getEvenNumbersSum(array) {
@@ -54,5 +54,5 @@
     }
 
     var evenNumberSquares = getEvenNumbersSquares(numbersArray2);
-    console.log("Квадраты четных числе: " + evenNumberSquares.join(", "));
+    console.log("Квадраты четных чисел: " + evenNumberSquares.join(", "));
 })();
