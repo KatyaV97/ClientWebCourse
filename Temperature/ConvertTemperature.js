@@ -18,7 +18,7 @@
     }
 
     function getKelvinFromCelsius(celsius) {
-        return (+celsius + 273).toFixed(2);
+        return (+celsius + 273.15).toFixed(2);
     }
 
     function checkTemperatureIsNumber(temperature) {
