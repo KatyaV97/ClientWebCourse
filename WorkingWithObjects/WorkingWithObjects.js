@@ -59,12 +59,10 @@
 
     function getCountriesInfoString(countries) {
         return countries.map(function (country) {
-            return (country.name + ": " + country.cities.map(function (city) {
+            return country.name + ": " + country.cities.map(function (city) {
                 return "\n " + city.name + ": " + city.population;
-            })
-            );
-        }
-        ).join(", ");
+            });
+        }).join(", \n");
     }
 
     console.log("Исходный массив:\n" + getCountriesInfoString(countries));
