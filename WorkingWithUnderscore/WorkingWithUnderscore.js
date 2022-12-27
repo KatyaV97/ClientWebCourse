@@ -88,7 +88,7 @@
     console.log("Список людей с уникальными именами возрастом от 20 до 30 лет включительно:\n" +
         getPeopleInfoString(from20To30AgeSortByDescWithUniqueNamesPeople));
 
-    function getUniquePeopleNames(people) {
+    function getUniquePeopleNamesList(people) {
         var result = {};
 
         _.chain(people).uniq(function (person) {
@@ -104,7 +104,7 @@
         return result;
     }
 
-    var uniquePeopleNames = getUniquePeopleNames(people);
+    var uniquePeopleNames = getUniquePeopleNamesList(people);
 
     for (var name in uniquePeopleNames) {
         console.log(name + ": " + uniquePeopleNames[name]);
