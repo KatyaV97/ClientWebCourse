@@ -31,7 +31,7 @@
     function addTask() {
         var newTask = newTaskInputText.value;
 
-        if (!checkTaskIsValid(newTask.trim())) {
+        if (newTask === null || !checkTaskIsValid(newTask.trim())) {
             return;
         }
 
@@ -51,7 +51,7 @@
     }
 
     function checkTaskIsValid(task) {
-        if (task === "" || task === null) {
+        if (task === "") {
             alert("Нужно ввести задачу.");
             return false;
         }
@@ -60,11 +60,11 @@
     }
 
     function insertTaskInRow(task, taskRow) {
-        taskRow.innerHTML = "<td class='new-task'></td>" +
+        taskRow.innerHTML = "<td class='task'></td>" +
             "<td><button type='button' class='edit-button'>Редактировать</button>" +
-            "<button type='button' class='delete-button'>Удалить</button ></td> ";
+            "<button type='button' class='delete-button'>Удалить</button></td>";
 
-        taskRow.querySelector(".new-task").textContent = task;
+        taskRow.querySelector(".task").textContent = task;
 
         taskRow.querySelector(".edit-button").addEventListener("click", function () {
             editTask(task, taskRow);
@@ -81,7 +81,7 @@
     function editTask(task, taskRow) {
         taskRow.innerHTML = "<td class='edit-task'><input type='text'></td>" +
             "<td><button type='button' class='save-button'>Сохранить</button>" +
-            "<button type='button' class='cancel-button'>Отмена</button ></td> ";
+            "<button type='button' class='cancel-button'>Отмена</button></td>";
 
         taskRow.querySelector(".edit-task input").value = task;
 
@@ -103,7 +103,7 @@
     function updateTask(taskRow) {
         var editTask = taskRow.querySelector(".edit-task input").value;
 
-        if (checkTaskIsValid(editTask.trim())) {
+        if (editTask !== null && checkTaskIsValid(editTask.trim())) {
             insertTaskInRow(editTask, taskRow);
 
             tasks[taskRow.sectionRowIndex].task = editTask;
@@ -112,7 +112,7 @@
     }
 
     function initTasks() {
-        tasks.forEach(taskInfo => {
+        tasks.forEach(function (taskInfo) {
             var taskRow = document.createElement("tr");
             var task = taskInfo.task;
 
