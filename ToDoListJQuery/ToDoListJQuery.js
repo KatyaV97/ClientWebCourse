@@ -28,11 +28,9 @@
     });
 
     function addTask() {
-        var newTask = newTaskInputText.val().trim();
-        newTaskInputText.val("");
+        var newTask = newTaskInputText.val();
 
-        if (!isValidTask(newTask)) {
-            alert("Нужно ввести задачу.");
+        if (newTask === null || !checkTaskIsValid($.trim(newTask))) {
             return;
         }
 
@@ -45,11 +43,13 @@
             task: newTask,
         });
 
+        newTaskInputText.val("");
         localStorage.tasks = JSON.stringify(tasks);
     }
 
-    function isValidTask(task) {
-        if (task === "" || task === null) {
+    function checkTaskIsValid(task) {
+        if (task === "") {
+            alert("Нужно ввести задачу.");
             return false;
         }
 
@@ -57,14 +57,14 @@
     }
 
     function insertTaskInRow(task, taskRow) {
-        taskRow.html("<td class='new-task'></td>" +
+        taskRow.html("<td class='task'></td>" +
             "<td><button type='button' class='edit-button'>Редактировать</button>" +
-            "<button type='button' class='delete-button'>Удалить</button ></td> ")
-            .find(".new-task")
+            "<button type='button' class='delete-button'>Удалить</button></td>")
+            .find(".task")
             .text(task);
 
         taskRow.find(".edit-button").click(function () {
-            var task = taskRow.find(".new-task").text();
+            var task = taskRow.find(".task").text();
 
             editTask(task, taskRow);
         });
@@ -80,7 +80,7 @@
     function editTask(task, taskRow) {
         taskRow.html("<td class='edit-task'><input type='text'></td>" +
             "<td><button type='button' class='save-button'>Сохранить</button>" +
-            "<button type='button' class='cancel-button'>Отмена</button ></td> ")
+            "<button type='button' class='cancel-button'>Отмена</button></td>")
             .find(".edit-task input")
             .val(task);
 
@@ -94,16 +94,15 @@
             }
         });
 
-        taskRow.find(".cancel-button").on("click", function () {
+        taskRow.find(".cancel-button").click(function () {
             insertTaskInRow(task, taskRow);
         });
     }
 
     function updateTask(taskRow) {
-        var editTask = taskRow.find(".edit-task input").val().trim();
+        var editTask = taskRow.find(".edit-task input").val();
 
-        if (!isValidTask(editTask)) {
-            alert("Нужно ввести задачу.");
+        if (editTask === null || !checkTaskIsValid($.trim(editTask))) {
             return;
         }
 
@@ -114,7 +113,7 @@
     }
 
     function initTasks() {
-        tasks.forEach(taskInfo => {
+        tasks.forEach(function (taskInfo) {
             var taskRow = $("<tr>").appendTo(tableBody);
             var task = taskInfo.task;
 

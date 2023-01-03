@@ -33,7 +33,7 @@
 	}
 
 .tasks-list {
-	padding: 10px 15px;
+	padding: 15px;
 }
 
 .tasks-list-table {
@@ -54,7 +54,9 @@
 	}
 
 		.tasks-list-table td:last-child {
-			text-align: center;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
 		}
 
 	.tasks-list-table th {
@@ -88,14 +90,14 @@
 
 .delete-button,
 .cancel-button {
-	width: 40%;
+	width: 48%;
 	min-width: 170px;
 	background-color: #e02020;
 	color: #fff;
 	font-weight: bold;
 	border: 1px solid #004b0a;
-	padding: 5px 30px;
-	margin: 0 10px;
+	padding: 5px 10px;
+	margin: 5px 0;
 }
 
 	.delete-button:hover,
@@ -106,14 +108,14 @@
 
 .edit-button,
 .save-button {
-	width: 40%;
+	width: 48%;
 	min-width: 170px;
 	background-color: #27A630;
 	color: #fff;
 	font-weight: bold;
 	border: 1px solid #004b0a;
-	padding: 5px 20px;
-	margin: 5px 10px;
+	padding: 5px 10px;
+	margin: 5px 5px 5px 0;
 }
 
 .edit-task input {
