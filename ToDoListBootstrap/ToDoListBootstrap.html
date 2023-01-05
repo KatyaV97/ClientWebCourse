@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ToDo List Bootstrap</title>
+	<link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="StyleForToDoListBootstrap.css" rel="stylesheet">
+	<script defer src="node_modules/jquery/dist/jquery.js"></script>
+	<script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+	<script defer src="ToDoListBootstrap.js"></script>
+</head>
+<body>
+	<div class="container mt-4 p-4">
+		<h1 class="header">Список задач</h1>
+		<div class="mb-3">
+			<input type="text" class="form-control new-task pt-2">
+		</div>
+		<div class="mb-3">
+			<button type="button" class="btn btn-outline-success add-button">Добавить</button>
+		</div>
+		<div class="tasks-list">
+			<table class="table table-striped table-hover align-middle">
+				<thead class="table-dark">
+					<tr>
+						<th class="col-7">Задачи</th>
+						<th class="col-3"></th>
+						<th class="col-2"></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
