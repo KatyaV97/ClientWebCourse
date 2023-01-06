@@ -1,8 +1,9 @@
 ﻿$(function () {
     var tableBody = $(".contacts-list tbody");
-    var lastNameInputText = $("#last-name");
-    var firstNameInputText = $("#first-name");
-    var phoneNumberInputText = $("#phone-number");
+    var lastNameInput = $("#last-name");
+    var firstNameInput = $("#first-name");
+    var phoneNumberInput = $("#phone-number");
+    var filterTextInput = $(".filter-text");
 
     var contactsData = [];
     var storageContacts = localStorage.getItem("contacts");
@@ -14,13 +15,13 @@
     }
 
     $(".add-button").click(function () {
-        var lastName = lastNameInputText.val().trim();
-        var firstName = firstNameInputText.val().trim();
-        var phoneNumber = phoneNumberInputText.val().trim();
+        var lastName = lastNameInput.val().trim();
+        var firstName = firstNameInput.val().trim();
+        var phoneNumber = phoneNumberInput.val().trim();
 
         if (!isValidContactData(lastName, firstName, phoneNumber)) {
             return;
-        };
+        }
 
         if (checkIncludePhoneNumber(phoneNumber)) {
             bootbox.alert("This phone number exists!")
@@ -66,11 +67,11 @@
     });
 
     $(".apply-filter-button").click(function () {
-        applyFilter($(this).prev().val().trim());
+        applyFilter(filterTextInput.val().trim());
     });
 
     $(".clear-filter-button").click(function () {
-        $(this).closest("form").find("input").val("");
+        filterTextInput.val("");
         clearFilterForContactsList();
 
         updateCellsNumbers();
@@ -82,7 +83,7 @@
             "<td class='last-name'></td>" +
             "<td class='first-name'></td>" +
             "<td class='phone-number'></td>" +
-            "<td><button class='delete-button' type='button'>X</button></td>")
+            "<td><button class='btn btn-danger p-0 delete-button' type='button'>X</button></td>")
             .appendTo(tableBody);
 
         newContactRow.find(".number").text(tableBody.find("tr:visible").length);
@@ -165,11 +166,7 @@
     }
 
     function isValid(inputText) {
-        if (inputText === "" || inputText === null) {
-            return false;
-        }
-
-        return true;
+        return inputText !== "" || inputText !== null;
     }
 
     function hiddenHint(hint, inputForm, hideHint) {
@@ -184,7 +181,7 @@
     }
 
     function initPhoneBook() {
-        contactsData.forEach(function(contactData) {
+        contactsData.forEach(function (contactData) {
             addContact(contactData.lastName, contactData.firstName, contactData.phoneNumber);
         });
     }

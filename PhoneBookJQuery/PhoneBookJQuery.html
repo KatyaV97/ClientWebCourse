@@ -1,15 +1,13 @@
 ﻿<!DOCTYPE html>
 <head>
 	<meta charsert="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Phone Book JQuery</title>
-	<link href="normalize.css" rel="stylesheet">
-	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="node_modules\bootstrap\dist\css\bootstrap.css" rel="stylesheet">
 	<link href="StyleForPhoneBook.css" rel="stylesheet">
-	<script defer src="jquery-3.6.2.js"></script>
-	<script defer src="popper.js"></script>
-	<script defer src="bootstrap.min.js"></script>
-	<script defer src="bootbox.all.min.js">
-	</script>
+	<script defer src="node_modules\jquery\dist\jquery.js"></script>
+	<script defer src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+	<script defer src="node_modules\bootbox\dist\bootbox.js"></script>
 	<script defer src="PhoneBookJQuery.js"></script>
 </head>
 <body>
@@ -36,19 +34,17 @@
 				</label>
 			</div>
 			<div>
-				<button type="button" class="add-button">+ Add contact</button>
+				<button type="button" class="btn btn-success add-button">+ Add contact</button>
 			</div>
 		</form>
 	</div>
 	<div class="contacts-list">
 		<h1>Contacts</h1>
-		<div>
-			<form>
-				<input type="text" class="filter-text" placeholder="Search">
-				<button type="button" class="apply-filter-button">Apply</button>
-				<button type="button" class="clear-filter-button">Clear</button>
+			<form class="row p-1">
+				<input type="text" class="col-6 filter-text m-2" placeholder="Search">
+				<button type="button" class="col-2 btn btn-primary apply-filter-button">Apply</button>
+				<button type="button" class="col-2 btn btn-secondary clear-filter-button">Clear</button>
 			</form>
-		</div>
 		<table>
 			<thead>
 				<tr>

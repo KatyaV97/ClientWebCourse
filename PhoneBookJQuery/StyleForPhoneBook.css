@@ -42,23 +42,11 @@
 
 	.add-form button {
 		width: 20%;
+		min-width: 100px;
 		margin: 5px 0;
 		padding: 8px;
 		font-weight: bold;
-		color: #fff;
-		background-color: #00bf45;
-		border: 1px solid #008445;
-		border-radius: 5px;
 	}
-
-		.add-form button:hover {
-			cursor: pointer;
-			background-color: #008445;
-		}
-
-		.add-form button:active {
-			box-shadow: 2px 2px 4px #2f4f4f inset;
-		}
 
 .failed-validation {
 	color: #f00;
@@ -102,32 +90,14 @@ input {
 
 .filter-text {
 	font-size: 14px;
-	width: 60%;
-	margin: 8px 20px 0 0;
-	padding: 4px;
-	border: 1px solid #000000
+	border: 1px solid #000
 }
 
-.apply-filter-button {
-	font-weight: bold;
-	background-color: #6495ED;
-	border: 1px solid #22276c;
-}
-
+.apply-filter-button,
 .clear-filter-button {
+	min-width: 70px;
 	font-weight: bold;
-	background-color: #808080;
-	border: 1px solid #676565;
-}
-
-.apply-filter-button:hover {
-	background-color: #4682b4;
-	cursor: pointer;
-}
-
-.clear-filter-button:hover {
-	background-color: #696969;
-	cursor: pointer;
+	padding: 5px 10px;
 }
 
 .contacts-list table {
@@ -169,17 +139,9 @@ input {
 
 .delete-button {
 	width: 100%;
-	margin: 5px 0;
-	background-color: #f00;
-	color: #fff;
+	min-width: 25px;
 	font-weight: bold;
-	border: none;
 }
-
-	.delete-button:hover {
-		cursor: pointer;
-		background-color: #710802;
-	}
 
 .contacts-list input[type=checkbox] {
 	width: 100%;
