@@ -4,6 +4,7 @@
     var firstNameInput = $("#first-name");
     var phoneNumberInput = $("#phone-number");
     var filterTextInput = $(".filter-text");
+    var commonCheckbox = $("#common-checkbox");
 
     var contactsData = [];
     var storageContacts = localStorage.getItem("contacts");
@@ -23,8 +24,8 @@
             return;
         }
 
-        if (checkIncludePhoneNumber(phoneNumber)) {
-            bootbox.alert("This phone number exists!")
+        if (hasPhoneNumber(phoneNumber)) {
+            bootbox.alert("This phone number exists!");
             return;
         }
 
@@ -42,16 +43,34 @@
         $(".add-form input").val("");
     });
 
-    $("#common-checkbox").click(function () {
+    commonCheckbox.click(function () {
         if ($(this).prop("checked")) {
-            tableBody.find("tr:visible input:not(:checked)").each(function () {
-                $(this).prop("checked", true);
-            })
+            tableBody.find("tr:visible input:not(:checked)").prop("checked", true);
         } else {
-            tableBody.find("tr:visible input:checked").each(function () {
-                $(this).prop("checked", false);
-            })
+            tableBody.find("tr:visible input:checked").prop("checked", false);
         }
+    });
+
+    $('.delete-checked-button').click(function () {
+        bootbox.confirm({
+            message: "Are you sure?",
+            title: "The selected contacts will be deleted",
+            callback: function (result) {
+                if (result) {
+                    tableBody.children().each(function () {
+                        if ($(this).find("input").prop("checked")) {
+                            contactsData.splice($(this).index(), 1);
+                            localStorage.contacts = JSON.stringify(contactsData);
+
+                            $(this).remove();
+                        }
+                    });
+
+                    updateCellsNumbers();
+                    commonCheckbox.prop("checked", false);
+                }
+            }
+        });
     });
 
     $(".contacts-list form").on("keydown", function (e) {
@@ -60,7 +79,7 @@
         }
     });
 
-    $(".filter-text").on("keydown", function (e) {
+    filterTextInput.on("keydown", function (e) {
         if (e.keyCode === 13) {
             applyFilter($(this).val().trim());
         }
@@ -96,27 +115,24 @@
 
             bootbox.confirm({
                 message: "Are you sure?",
-                title: "The selected contacts will be deleted",
+                title: "Contact will be deleted",
                 callback: function (result) {
                     if (result) {
-                        tableBody.children().each(function () {
-                            if ($(this).find("input").prop("checked")) {
-                                contactsData.splice($(this).index(), 1);
-                                localStorage.contacts = JSON.stringify(contactsData);
+                        contactsData.splice(newContactRow.index(), 1);
+                        localStorage.contacts = JSON.stringify(contactsData);
 
-                                $(this).remove();
-                            }
-                        });
-
+                        newContactRow.remove();
                         updateCellsNumbers();
-                    } else {
-                        newContactRow.find("input").prop("checked", false);
                     }
-
-                    $("#common-checkbox").prop("checked", false);
                 }
             });
-        })
+        });
+
+        newContactRow.find("input").click(function () {
+            if (tableBody.find("tr:visible input:not(:checked)").length) {
+                commonCheckbox.prop("checked", false);
+            }
+        });
     }
 
     function applyFilter(filterText) {
@@ -142,9 +158,7 @@
     }
 
     function clearFilterForContactsList() {
-        tableBody.children().each(function () {
-            $(this).show();
-        });
+        tableBody.children().show();
     }
 
     function updateCellsNumbers() {
@@ -166,17 +180,17 @@
     }
 
     function isValid(inputText) {
-        return inputText !== "" || inputText !== null;
+        return inputText !== "" && inputText !== null;
     }
 
     function hiddenHint(hint, inputForm, hideHint) {
-        hideHint ? hint.addClass("js-hidden-hint") : hint.removeClass("js-hidden-hint");
-        hideHint ? inputForm.removeClass("js-add-border") : inputForm.addClass("js-add-border");
+        hint.toggleClass("js-hidden-hint", hideHint);
+        inputForm.toggleClass("js-add-border", !hideHint);
     }
 
-    function checkIncludePhoneNumber(phoneNumber) {
+    function hasPhoneNumber(phoneNumber) {
         return contactsData.some(function (contactData) {
-            return contactData.phoneNumber === phoneNumber
+            return contactData.phoneNumber === phoneNumber;
         });
     }
 
