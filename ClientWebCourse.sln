@@ -27,11 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookJQuery", "PhoneBoo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithUnderscore", "WorkingWithUnderscore\WorkingWithUnderscore.csproj", "{F3A118BA-CB0E-4819-9BCA-1C88132C65F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListBootstrap", "ToDoListBootstrap\ToDoListBootstrap.csproj", "{FF7E189B-9254-44D4-BDA5-A47AF6014157}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListBootstrap", "ToDoListBootstrap\ToDoListBootstrap.csproj", "{FF7E189B-9254-44D4-BDA5-A47AF6014157}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListVue", "ToDoListVue\ToDoListVue.csproj", "{AAAF40C6-E03E-4248-AE62-14189C16CC12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListVue", "ToDoListVue\ToDoListVue.csproj", "{AAAF40C6-E03E-4248-AE62-14189C16CC12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookVue", "PhoneBookVue\PhoneBookVue.csproj", "{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookVue", "PhoneBookVue\PhoneBookVue.csproj", "{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
