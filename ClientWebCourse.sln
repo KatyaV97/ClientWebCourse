@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithUnderscore", "Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListBootstrap", "ToDoListBootstrap\ToDoListBootstrap.csproj", "{FF7E189B-9254-44D4-BDA5-A47AF6014157}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListVue", "ToDoListVue\ToDoListVue.csproj", "{AAAF40C6-E03E-4248-AE62-14189C16CC12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookVue", "PhoneBookVue\PhoneBookVue.csproj", "{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{FF7E189B-9254-44D4-BDA5-A47AF6014157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF7E189B-9254-44D4-BDA5-A47AF6014157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF7E189B-9254-44D4-BDA5-A47AF6014157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAF40C6-E03E-4248-AE62-14189C16CC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAF40C6-E03E-4248-AE62-14189C16CC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAF40C6-E03E-4248-AE62-14189C16CC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAF40C6-E03E-4248-AE62-14189C16CC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D4F3DF8-31B1-4DFC-8290-FA5B93BB0DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
