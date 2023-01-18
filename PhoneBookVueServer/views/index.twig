@@ -1,6 +1,69 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+		<div id="app" class="container">
+			<h1 class="mt-2">Phone Book</h1>
+			<form @submit.prevent="createContact" class="mb-4">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="mb-3">
+							<label for="first-name" class="form-label">First Name</label>
+							<input v-model="firstName" type="text" class="form-control" id="first-name">
+						</div>
+						<div class="mb-3">
+							<label for="last-name" class="form-label">Last Name</label>
+							<input v-model="lastName" type="text" class="form-control" id="last-name">
+						</div>
+						<div class="mb-3">
+							<label for="phone-number" class="form-label">Phone Number</label>
+							<input v-model="phoneNumber" type="text" class="form-control" id="phone-number">
+						</div>
+						<button type="submit" class="btn btn-primary">+Add contact</button>
+					</div>
+				</div>
+			</form>
+			<form @submit.prevent="loadContacts" class="mb-4">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="mb-3">
+							<label for="term" class="form-label">Search</label>
+							<input v-model="term" type="text" class="form-control" id="term">
+						</div>
+						<button type="submit" class="btn btn-primary">Apply</button>
+					</div>
+				</div>
+			</form>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								<input type="checkbox" id="common-checkbox">
+							</th>
+							<th>N</th>
+							<th>Last Name</th>
+							<th>First Name</th>
+							<th>Phone Number</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody v-cloak>
+						<tr v-for="(contact, index) in contacts" 
+									:key="contact.id">
+							<td>
+								<input type="checkbox" id="index" v-bind:value="contact" v-model="checkedContactsId">{{checkedContactsId}}
+							</td>
+							<td>{% verbatim %}{{ index + 1 }}.{% endverbatim %}</td>
+							<td v-text="contact.firstName"></td>
+							<td v-text="contact.lastName"></td>
+							<td v-text="contact.phoneNumber"></td>
+							<td>
+								<button @click="deleteContact(contact)" type="button" class="btn btn-danger">X</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button @click="deleteSelectedContacts(checkedContactsId)" type="button" class="btn btn-danger">Delete selected</button>
+			</div>
+		</div>
 {% endblock %}

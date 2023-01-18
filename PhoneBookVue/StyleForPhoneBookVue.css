@@ -1,2 +1,48 @@
-﻿body {
+﻿* {
+	box-sizing: border-box;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+.bgimg {
+	background-image: url("nature.png");
+}
+
+.inputForm {
+	background-color: #fff;
+	box-shadow: 5px -5px 10px #909090;
+	border-radius: 10px;
+}
+
+.table {
+	box-shadow: -5px 5px 10px #909090;
+}
+
+.hidden-hint {
+	display: none;
+}
+
+.add-border {
+	border: 1px solid #f00;
+}
+
+.failed-validation {
+	color: #f00;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.table th:nth-child(1),
+.table th:nth-child(2),
+.table th:last-child,
+.table td:nth-child(1),
+.table td:nth-child(2),
+.table td:last-child {
+	text-align: center;
+}
+
+.table td {
+	vertical-align: middle
 }
