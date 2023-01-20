@@ -1,5 +1,4 @@
-﻿
-new Vue({
+﻿new Vue({
     el: "#app",
 
     data: {
@@ -34,13 +33,13 @@ new Vue({
             var storageContacts = JSON.parse(localStorage.getItem("contacts"));
 
             if (storageContacts !== null) {
-                this.contacts = storageContacts;
+                this.contacts = storageContacts.slice(0);
                 this.storageContacts = this.contacts.slice(0);
             }
 
             var lastContactId = localStorage.getItem("lastContactId");
 
-            if (lastContactId === "" || lastContactId === null) {
+            if (lastContactId === null || lastContactId === "") {
                 this.id = 1;
             } else {
                 this.id = lastContactId;
@@ -48,12 +47,25 @@ new Vue({
         },
 
         createContact: function () {
-            var isValidContactData = this.isValidContactData();
+            this.firstName = this.firstName.trim();
+            this.lastName = this.lastName.trim();
+            this.phoneNumber = this.phoneNumber.trim();
+
+            var lastNameIsValid = this.isValid(this.lastName);
+            var firstNameIsValid = this.isValid(this.firstName);
+            var phoneNumberIsValid = this.isValid(this.phoneNumber);
+
+            this.toggleHint($("#first-name-invalid"), firstNameIsValid);
+            this.toggleHint($("#last-name-invalid"), lastNameIsValid);
+            this.toggleHint($("#phone-number-invalid"), phoneNumberIsValid);
+            this.addBorder($("#first-name"), !firstNameIsValid);
+            this.addBorder($("#last-name"), !lastNameIsValid);
+
             var hasPhoneNumber = this.hasPhoneNumber();
 
-            this.addBorder($("#phone-number"), !isValidContactData || hasPhoneNumber);
+            this.addBorder($("#phone-number"), !phoneNumberIsValid || hasPhoneNumber);
 
-            if (!isValidContactData || hasPhoneNumber) {
+            if (!lastNameIsValid || !firstNameIsValid || !phoneNumberIsValid || hasPhoneNumber) {
                 return;
             }
 
@@ -65,7 +77,6 @@ new Vue({
             };
 
             this.storageContacts.push(contact);
-            //this.filterContacts();
             this.contacts.push(contact);
             this.updateLocalStorage();
 
@@ -126,7 +137,7 @@ new Vue({
         filterContacts: function () {
             var self = this;
 
-            this.contacts = this.filterText === "" ? this.storageContacts :
+            this.contacts = this.filterText === "" ? this.storageContacts.slice(0) :
                 this.storageContacts.filter(function (contact) {
                     if (contact.firstName.toLowerCase().includes(self.filterText.toLowerCase()) ||
                         contact.lastName.toLowerCase().includes(self.filterText.toLowerCase()) ||
@@ -141,24 +152,6 @@ new Vue({
             this.uncheckHiddenContacts();
         },
 
-        isValidContactData: function () {
-            this.firstName = this.firstName.trim();
-            this.lastName = this.lastName.trim();
-            this.phoneNumber = this.phoneNumber.trim();
-
-            var lastNameIsValid = this.isValid(this.lastName);
-            var firstNameIsValid = this.isValid(this.firstName);
-            var phoneNumberIsValid = this.isValid(this.phoneNumber);
-
-            this.hiddenHint($("#first-name-invalid"), firstNameIsValid);
-            this.hiddenHint($("#last-name-invalid"), lastNameIsValid);
-            this.hiddenHint($("#phone-number-invalid"), phoneNumberIsValid);
-            this.addBorder($("#first-name"), !firstNameIsValid);
-            this.addBorder($("#last-name"), !lastNameIsValid);
-
-            return lastNameIsValid && firstNameIsValid && phoneNumberIsValid;
-        },
-
         isValid: function (inputText) {
             return inputText !== null && inputText !== "";
         },
@@ -170,13 +163,13 @@ new Vue({
                 return contact.phoneNumber === self.phoneNumber;
             });
 
-            this.hiddenHint($("#phone-number-exist"), !isPhoneNumberExist);
+            this.toggleHint($("#phone-number-exist"), !isPhoneNumberExist);
 
             return isPhoneNumberExist;
         },
 
-        hiddenHint: function (hint, hideHint) {
-            hint.toggleClass("hidden-hint", hideHint);
+        toggleHint: function (hint, toggleHint) {
+            hint.toggleClass("hidden-hint", toggleHint);
         },
 
         addBorder: function (inputForm, addBorder) {

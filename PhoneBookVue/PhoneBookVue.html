@@ -12,118 +12,115 @@
 	<script defer src="PhoneBookVue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div class="bgimg p-3">
-            <div class="container">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 p-4 inputForm">
-                            <h1>Phone Book</h1>
-                            <div class="mb-2">
-                                <label for="first-name" class="form-label">First Name</label>
-                                <input type="text" v-model="firstName" class="form-control" id="first-name">
-                                <span class="failed-validation hidden-hint" id="first-name-invalid">The field is required</span>
-                            </div>
-                            <div class="mb-2">
-                                <label for="last-name" class="form-label">Last Name</label>
-                                <input type="text" v-model="lastName" class="form-control" id="last-name">
-                                <span class="failed-validation hidden-hint" id="last-name-invalid">The field is required</span>
-                            </div>
-                            <div class="mb-2">
-                                <label for="phone-number-name" class="form-label">Phone Number</label>
-                                <input type="text" v-model="phoneNumber" class="form-control" id="phone-number">
-                                <span class="failed-validation hidden-hint" id="phone-number-invalid">The field is required</span>
-                                <span class="failed-validation hidden-hint" id="phone-number-exist">This phone number exists</span>
-                            </div>
-                            <button type="button" @click="createContact" class="btn btn-success mb-3">+Add contact</button>
-                            <div class="mb-3">
-                                <label for="filter-text" class="form-label">Search</label>
-                                <input type="text" v-model="filterText" class="form-control" id="filter-text">
-                            </div>
-                            <div>
-                                <button type="button" @click="applyFilterText" class="btn btn-success">Apply</button>
-                                <button type="button" @click="clearFilterText" class="btn btn-secondary">Clear</button>
-                            </div>
+	<div id="app">
+		<div class="bgimg p-3">
+			<div class="container">
+				<form>
+					<div class="row">
+						<div class="col-md-6 offset-md-3 p-4 inputForm">
+							<h1>Phone Book</h1>
+							<div class="mb-2">
+								<label for="first-name" class="form-label">First Name</label>
+								<input type="text" v-model="firstName" class="form-control" id="first-name">
+								<span class="failed-validation hidden-hint" id="first-name-invalid">The field is required</span>
+							</div>
+							<div class="mb-2">
+								<label for="last-name" class="form-label">Last Name</label>
+								<input type="text" v-model="lastName" class="form-control" id="last-name">
+								<span class="failed-validation hidden-hint" id="last-name-invalid">The field is required</span>
+							</div>
+							<div class="mb-2">
+								<label for="phone-number-name" class="form-label">Phone Number</label>
+								<input type="text" v-model="phoneNumber" class="form-control" id="phone-number">
+								<span class="failed-validation hidden-hint" id="phone-number-invalid">The field is required</span>
+								<span class="failed-validation hidden-hint" id="phone-number-exist">This phone number exists</span>
+							</div>
+							<button type="button" @click="createContact" class="btn btn-success mb-3">+Add contact</button>
+							<div class="mb-3">
+								<label for="filter-text" class="form-label">Search</label>
+								<input type="text" v-model="filterText" class="form-control" id="filter-text">
+							</div>
+							<div>
+								<button type="button" @click="applyFilterText" class="btn btn-success">Apply</button>
+								<button type="button" @click="clearFilterText" class="btn btn-secondary">Clear</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="container mt-4">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<table class="table table-hover">
+						<thead class="table-dark">
+							<tr>
+								<th>
+									<input type="checkbox" id="common-checkbox" @click="checkedAllContacts" v-model="isCheckedCommonCheckbox">
+								</th>
+								<th>№</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Phone Number</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider" v-cloak>
+							<tr v-for="(contact, index) in contacts"
+								:key="contact.id"
+								:value="contact.id">
+								<td>
+									<input type="checkbox" :value="contact.id" v-model="checkedContacts">
+								</td>
+								<td>{{index + 1}}.</td>
+								<td v-text="contact.firstName"></td>
+								<td v-text="contact.lastName"></td>
+								<td v-text="contact.phoneNumber"></td>
+								<td>
+									<button type="button" @click="launchDeleteContactConfirmation(contact)" class="btn btn-danger">X</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<button type="button" class="btn btn-danger" @click="launchDeleteSelectedContactsConfirmation">Delete selected</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal" tabindex="-1" id="deleteContactConfirmation">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Contact will be deleted</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" @click="uncheck" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+						<button @click="deleteContact" data-bs-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal" tabindex="-1" id="deleteSelectedContactsConfirmation">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">The selected contacts will be deleted</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+						<button @click="deleteCheckedContacts" data-bs-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <table class="table table-hover">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>
-                                    <input type="checkbox" id="common-checkbox" @click="checkedAllContacts" v-model="isCheckedCommonCheckbox">
-                                </th>
-                                <th>№</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Phone Number</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider" v-cloak>
-                            <tr v-for="(contact, index) in contacts"
-                                :key="contact.id"
-                                :value="contact.id">
-                                <td>
-                                    <input type="checkbox" :value="contact.id" v-model="checkedContacts">
-                                </td>
-                                <td>{{index + 1}}.</td>
-                                <td v-text="contact.firstName"></td>
-                                <td v-text="contact.lastName"></td>
-                                <td v-text="contact.phoneNumber"></td>
-                                <td>
-                                    <button type="button" @click="launchDeleteContactConfirmation(contact)" class="btn btn-danger">X</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn btn-danger" @click="launchDeleteSelectedContactsConfirmation">Delete selected</button>
-                </div>
-            </div>
-        </div>
-        <div class="modal" tabindex="-1" id="deleteContactConfirmation">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Contact will be deleted</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" @click="uncheck" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button @click="deleteContact" data-bs-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal" tabindex="-1" id="deleteSelectedContactsConfirmation">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">The selected contacts will be deleted</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button @click="deleteCheckedContacts" data-bs-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
+	</div>
 </body>
 </html>
